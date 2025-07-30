@@ -5,7 +5,7 @@ let age = 25;
 age=32; //It can be
 
 const country = "Türkiye"; // can not change
-country="Almanya" ; // 
+country="Almanya" ; // It is an error
 console.log(country)
 
 let city;
@@ -26,4 +26,14 @@ console.log(cities[0]);     // "Adana"
 console.log(student.name);      // "Ahmet"
 
 
-alert("deneme")
+let data = 42;
+data = "fourty two";  // can be firstly integer then string
+
+
+
+5 == "5"     // true (value comparison)
+5 === "5"    // false (value and type comparison)
+
+
+
+
