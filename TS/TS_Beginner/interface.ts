@@ -22,7 +22,7 @@ interface Employee extends Person {
   salary: number;
 }
 
-const emp: Employee = {
+const employee: Employee = {
   name: "Uğur",
   age: 25,
   salary: 12000,
