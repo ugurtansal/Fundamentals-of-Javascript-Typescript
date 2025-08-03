@@ -70,10 +70,11 @@ const user: PartiallyReadonlyUser = {
 };
 
 user.name = "Yeni İsim";        //  Değiştirilebilir
+/*
 user.id = 99;                   //  HATA: readonly
 user.email = "x@example.com";   //  HATA: readonly
 
-
+*/
 
 
 //Pick<T, Keys> → Sadece belirli alanları alır
