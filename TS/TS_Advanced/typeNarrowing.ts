@@ -89,3 +89,21 @@ function makeSound(pet: MyAnotherDog | MyAnotherCat) {
   }
 }
 
+
+//Example of Type Guards
+
+type MyCircle = { kind: "circle"; radius: number };
+type MySquare = { kind: "square"; side: number };
+
+function isCircle(shape: MyCircle | MySquare): shape is MyCircle {
+  return shape.kind === "circle";
+}
+
+function calculateArea(shape: MyCircle | MySquare) {
+  if (isCircle(shape)) {
+    return Math.PI * shape.radius ** 2;
+  } else {
+    return shape.side ** 2;
+  }
+}
+
