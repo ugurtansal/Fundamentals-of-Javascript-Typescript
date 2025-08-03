@@ -70,3 +70,22 @@ function speak(pet: MyDog | MyCat) {
 }
 
 
+//Type Guards
+
+//isX()
+
+type MyAnotherDog = { kind: "dog"; bark(): void };
+type MyAnotherCat = { kind: "cat"; meow(): void };
+
+function isDog(animal: MyAnotherDog | MyAnotherCat): animal is MyAnotherDog {
+  return animal.kind === "dog";
+}
+
+function makeSound(pet: MyAnotherDog | MyAnotherCat) {
+  if (isDog(pet)) {
+    pet.bark(); // TS burada artık pet: Dog olduğunu biliyor
+  } else {
+    pet.meow();
+  }
+}
+
