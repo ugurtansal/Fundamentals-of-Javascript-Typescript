@@ -1,0 +1,72 @@
+//Type Narrowing (Tür Daraltma)
+
+
+//TR
+//TypeScript’te bir değişken birden fazla türde olabilir.
+//Type Narrowing, bu değişkenin çalışma zamanında hangi tür olduğunu belirleyip ona göre işlem yapmamızı sağlar.
+
+//EN    
+//In TypeScript, a variable can have more than one type. 
+// Type Narrowing allows us to determine the type of this variable at runtime and act accordingly.
+
+
+
+
+//typeof
+
+function printId(id: number | string) {
+  if (typeof id === "string") {
+    console.log(id.toUpperCase());
+  } else {
+    console.log(id.toFixed(2));
+  }
+}
+
+
+//in operator
+
+interface Admin {
+  name: string;
+  isAdmin: boolean;
+}
+
+interface User {
+  name: string;
+}
+
+function checkUser(person: Admin | User) {
+  if ("isAdmin" in person) {
+    console.log(`${person.name} is an admin`);
+  } else {
+    console.log(`${person.name} is a user`);
+  }
+}
+
+
+
+
+
+
+//instanceof => for class
+
+class MyDog {
+  bark() {
+    console.log("woof");
+  }
+}
+
+class MyCat {
+  meow() {
+    console.log("meow");
+  }
+}
+
+function speak(pet: MyDog | MyCat) {
+  if (pet instanceof MyDog) {
+    pet.bark();
+  } else {
+    pet.meow();
+  }
+}
+
+
